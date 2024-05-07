@@ -1,0 +1,81 @@
+.new-collections{
+    /* background: red; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    /* 使用 height: 90vh; 下一个NewsLetter 元素与当前元素重叠，不知道原因 */
+    margin-bottom: 100px;
+}
+
+.new-collections h1{
+    color: #171717;
+    font-size: 50px;
+    font-weight: 600;
+}
+
+.new-collections hr{
+    width: 200px;
+    height: 6px;
+    background: #252525;
+    border-radius: 3px;
+}
+
+.collections{
+    display: grid;
+    /* 1fr 表示一个等分比例的列。其中的1表示一个具有相对于其他列（或行）一倍大小的列（或行） */
+    grid-template-columns: repeat(4, 1fr);
+    margin-top: 50px;
+    gap: 30px;
+}
+
+@media(max-width:1280px){
+    .new-collections h1{
+        font-size: 40px;
+    }
+    .new-collections hr{
+        width: 160px;
+        height: 4px;
+    }
+    .collections{
+        gap: 20px;
+        margin-top: 30px;
+    }
+}
+
+@media(max-width:1024px){
+    .new-collections h1{
+        font-size: 30px;
+    }
+    .new-collections hr{
+        width: 120px;
+        height: 3px;
+    }
+    .collections{
+        gap: 15px;
+        margin-top: 20px;
+    }
+}
+
+@media(max-width:800px){
+    .new-collections{
+        gap: 6px;
+    }
+    .new-collections h1{
+        font-size: 20px;
+    }
+    .new-collections hr{
+        width: 100px;
+    }
+    .collections{
+        gap: 5px;
+    }
+}
+
+@media(max-width:500px){
+    .collections{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+}
