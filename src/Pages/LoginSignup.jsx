@@ -18,7 +18,7 @@ export const LoginSignup = () => {
   const login = async () =>{
     console.log("Login Function Executed", formData)
     let responseData;
-    await fetch('http://localhost:4001/login',{
+    await fetch('https://commerceweb-f4f47fbd37d5.herokuapp.com/login',{
       method: 'POST',
       headers:{
         Accept: 'application/json',
@@ -37,7 +37,7 @@ export const LoginSignup = () => {
   const signup = async () =>{
     console.log("Signup Function Executed", formData)
     let responseData;
-    await fetch('http://localhost:4001/signup',{
+    await fetch('https://commerceweb-f4f47fbd37d5.herokuapp.com/signup',{
       method: 'POST',
       headers:{
         Accept: 'application/json',

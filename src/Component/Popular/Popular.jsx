@@ -10,7 +10,7 @@ export const Popular = () => {
   const [data_product, setData_Product] = useState([]);
 
   useEffect(()=>{
-    fetch('http://localhost:4001/popularinwomen')
+    fetch('https://commerceweb-f4f47fbd37d5.herokuapp.com/popularinwomen')
     .then((res)=>res.json())
     .then((data)=>setData_Product(data))
   },[])

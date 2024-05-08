@@ -25,12 +25,12 @@ const ShopContextProvider = (props) => {
     const [cartItems, setCartItems] = useState(getDefaultCart());
     // 使用API从MongoDB中获取all_product
     useEffect(()=>{
-        fetch('http://localhost:4001/allproducts')
+        fetch('https://commerceweb-f4f47fbd37d5.herokuapp.com/allproducts')
         .then((res)=>res.json())
         .then((data)=>setAll_Product(data))
 
         if(localStorage.getItem('auth-token')){
-            fetch('http://localhost:4001/getcart', {
+            fetch('https://commerceweb-f4f47fbd37d5.herokuapp.com/getcart', {
                 method: 'POST',
                 headers:{
                     Accept: 'application/form-data',
@@ -53,7 +53,7 @@ const ShopContextProvider = (props) => {
         setCartItems((prev)=>({...prev, [itemId]:prev[itemId]+1}))
         // 如果localStorage里有auth-token，意味着我们处于登录状态
         if(localStorage.getItem('auth-token')){
-            fetch('http://localhost:4001/addtocart', {
+            fetch('https://commerceweb-f4f47fbd37d5.herokuapp.com/addtocart', {
                 method: 'POST',
                 headers: {
                     // 在Admin中upload数据的时候用的就是formData
@@ -74,7 +74,7 @@ const ShopContextProvider = (props) => {
         setCartItems((prev)=>({...prev, [itemId]:prev[itemId]-1}))
         // 如果localStorage里有auth-token，意味着我们处于登录状态
         if(localStorage.getItem('auth-token')){
-            fetch('http://localhost:4001/removefromcart', {
+            fetch('https://commerceweb-f4f47fbd37d5.herokuapp.com/removefromcart', {
                 method: 'POST',
                 headers: {
                     // 在Admin中upload数据的时候用的就是formData
@@ -93,7 +93,7 @@ const ShopContextProvider = (props) => {
         setCartItems((prev)=>({...prev, [itemId]:0}))
         // 如果localStorage里有auth-token，意味着我们处于登录状态
         if(localStorage.getItem('auth-token')){
-            fetch('http://localhost:4001/deletefromcart', {
+            fetch('https://commerceweb-f4f47fbd37d5.herokuapp.com/deletefromcart', {
                 method: 'POST',
                 headers: {
                     // 在Admin中upload数据的时候用的就是formData

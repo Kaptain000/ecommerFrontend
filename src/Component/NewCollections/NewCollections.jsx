@@ -10,7 +10,7 @@ export const NewCollections = () => {
   const [new_collection, setNew_Collections] = useState([]);
 
   useEffect(()=>{
-    fetch('http://localhost:4001/newcollections')
+    fetch('https://commerceweb-f4f47fbd37d5.herokuapp.com/newcollections')
     .then((res)=>res.json())
     .then((data)=>setNew_Collections(data))
   },[])
